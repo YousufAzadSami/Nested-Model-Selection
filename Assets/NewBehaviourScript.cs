@@ -13,7 +13,12 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Input.GetMouseButtonDown: " + transform.name);
+            DisplayName();
         }
 	}
+
+    public void DisplayName()
+    {
+        Debug.Log("Input.GetMouseButtonDown: " + transform.name);
+    }
 }
