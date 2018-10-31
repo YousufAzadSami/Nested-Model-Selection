@@ -13,13 +13,20 @@ public class RayCastTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Debug.Log(Input.mousePosition);
-        }
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
 
+        RaycastHit rayCastHit;
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(ray, out rayCastHit))
+            {
+                Debug.Log(rayCastHit.transform.name);
+            }
+        }
     }
 
     void OnGUI()
