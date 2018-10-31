@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class MouseDownTest: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +19,6 @@ public class NewBehaviourScript : MonoBehaviour {
 
     public void DisplayName()
     {
-        Debug.Log("Input.GetMouseButtonDown: " + transform.name);
+        // Debug.Log("Input.GetMouseButtonDown: " + transform.name);
     }
 }

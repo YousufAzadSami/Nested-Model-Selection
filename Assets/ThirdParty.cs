@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThirdParty : MonoBehaviour {
 
-    public NewBehaviourScript mVar;
+    public MouseDownTest mVar;
 
 	// Use this for initialization
 	void Start () {
