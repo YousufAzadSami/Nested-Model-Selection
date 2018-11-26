@@ -14,7 +14,14 @@ public class ChangeMaterial : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            mMaterial.color = Color.green;
+            DoSomeHighlightStuff();
         }
 	}
+
+    public void DoSomeHighlightStuff()
+    {
+        Debug.Log("In DoSomeHighlightStuff()");
+
+
+    }
 }

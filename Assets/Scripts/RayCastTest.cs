@@ -25,6 +25,13 @@ public class RayCastTest : MonoBehaviour {
             if (Physics.Raycast(ray, out rayCastHit))
             {
                 Debug.Log(rayCastHit.transform.name);
+
+                ChangeMaterial _changeMaterial = transform.GetComponent<ChangeMaterial>();
+                if(_changeMaterial)
+                {
+                    _changeMaterial.DoSomeHighlightStuff();
+                }
+
             }
         }
     }

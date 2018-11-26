@@ -13,12 +13,27 @@ public class MouseDownTest: MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButtonDown(0))
         {
-            DisplayName();
+            // DisplayName("Input.GetMouseButtonDown");
         }
-	}
+    }
 
-    public void DisplayName()
+    public void DisplayName(string functionName = "")
     {
-        // Debug.Log("Input.GetMouseButtonDown: " + transform.name);
+        Debug.Log(functionName + ": " + transform.name);
+    }
+
+    private void OnMouseEnter()
+    {
+        DisplayName("OnMouseEnter");
+    }
+
+    private void OnMouseOver()
+    {
+        
+    }
+
+    private void OnMouseExit()
+    {
+        DisplayName("OnMouseExit");
     }
 }
