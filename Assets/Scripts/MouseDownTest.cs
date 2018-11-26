@@ -24,7 +24,7 @@ public class MouseDownTest: MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        DisplayName("OnMouseEnter");
+        // DisplayName("OnMouseEnter");
     }
 
     private void OnMouseOver()
@@ -34,6 +34,6 @@ public class MouseDownTest: MonoBehaviour {
 
     private void OnMouseExit()
     {
-        DisplayName("OnMouseExit");
+        // DisplayName("OnMouseExit");
     }
 }

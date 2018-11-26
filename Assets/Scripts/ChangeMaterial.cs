@@ -6,9 +6,15 @@ public class ChangeMaterial : MonoBehaviour {
 
     public Material mMaterial;
 
-	// Use this for initialization
-	void Start () {
+    private Color originalColor;
+    private Color highlightColor;
+
+    // Use this for initialization
+    void Start () {
         mMaterial = GetComponent<Renderer>().material;
+
+        originalColor = mMaterial.color;
+        highlightColor = Color.red;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +28,14 @@ public class ChangeMaterial : MonoBehaviour {
     {
         Debug.Log("In DoSomeHighlightStuff()");
 
+        if (mMaterial.color == originalColor)
+        {
+            mMaterial.color = highlightColor;
+        }
+        else
+        {
+            mMaterial.color = originalColor;
+        }
 
     }
 }

@@ -26,10 +26,14 @@ public class RayCastTest : MonoBehaviour {
             {
                 Debug.Log(rayCastHit.transform.name);
 
-                ChangeMaterial _changeMaterial = transform.GetComponent<ChangeMaterial>();
-                if(_changeMaterial)
+                ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
+                if (_changeMaterial)
                 {
                     _changeMaterial.DoSomeHighlightStuff();
+                }
+                else
+                {
+                    Debug.Log("Change Material not found");
                 }
 
             }
