@@ -16,9 +16,7 @@ public class RotateStuff : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        translateMode = false;
-        rotateMode = true;
-        scaleMode = false;
+        ChangeModes(false, true, false);
 
 
         startingPosition = transform.position;
@@ -33,10 +31,10 @@ public class RotateStuff : MonoBehaviour {
         if (translateMode)
         {
             // Smoothly tilts a transform towards a target rotation.
-            float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
-            float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
+            float tiltAroundX = Input.GetAxis("Horizontal") * 10;
+            float tiltAroundY = Input.GetAxis("Vertical") * 10;
 
-            Vector3 target = startingPosition + new Vector3(tiltAroundX, 0, tiltAroundZ);
+            Vector3 target = startingPosition + new Vector3(tiltAroundX, tiltAroundY, 0);
 
             transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
         }
