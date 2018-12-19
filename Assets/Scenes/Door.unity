@@ -209,6 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
 --- !u!1 &1075737985
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +290,7 @@ GameObject:
   - component: {fileID: 1083425883}
   - component: {fileID: 1083425882}
   - component: {fileID: 1083425881}
+  - component: {fileID: 1083425885}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,19 +361,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 13.489, y: 0, z: 0}
---- !u!1 &1089309359 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
-  m_PrefabInternal: {fileID: 1512152587}
---- !u!114 &1089309363
+--- !u!114 &1083425885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089309359}
+  m_GameObject: {fileID: 1083425880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 113fec7cf0142b84e97add890cc41993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1512152587
@@ -409,9 +411,33 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1585016752 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100010, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+  m_PrefabInternal: {fileID: 1512152587}
+--- !u!114 &1585016756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585016752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
 --- !u!1 &1713838654 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: cfbb0a87f2964e44783291ff5b186b4b, type: 3}
@@ -427,6 +453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
 --- !u!1001 &1928567949
 Prefab:
   m_ObjectHideFlags: 0
