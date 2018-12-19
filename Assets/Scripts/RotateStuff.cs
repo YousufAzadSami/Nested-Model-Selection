@@ -14,19 +14,35 @@ public class RotateStuff : MonoBehaviour {
     Vector3 startingPosition;
     Vector3 startingScale;
 
+    public Material objectmaterial;
+    public Color originalColor;
+    public Color highlightColor;
+    public bool isSelected; // if selected, change the color to highlightColor
+
     // Use this for initialization
     void Start () {
+        // set up initial mode (rotate, translations, scale)
         ChangeModes(false, true, false);
 
 
         startingPosition = transform.position;
         startingScale = transform.localScale;
+
+        // highlight color stuff
+        objectmaterial = GetComponent<Renderer>().material;
+        originalColor = objectmaterial.color;
+        highlightColor = Color.red;
+        isSelected = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isSelected = !isSelected;
+            objectmaterial.color = Color.red;
+        }
 
         if (translateMode)
         {
