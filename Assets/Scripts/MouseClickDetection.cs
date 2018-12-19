@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayCastTest : MonoBehaviour {
+public class MouseClickDetection : MonoBehaviour {
 
     private Camera cam;
 
