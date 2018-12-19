@@ -113,6 +113,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &228916332 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+  m_PrefabInternal: {fileID: 1512152587}
+--- !u!135 &228916336
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228916332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0012313646
+  m_Center: {x: -2.3283064e-10, y: 0.0000000072759576, z: 2.3283064e-10}
+--- !u!114 &228916337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228916332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
 --- !u!1 &689564156
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +236,38 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689564156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
+--- !u!1 &781494379 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+  m_PrefabInternal: {fileID: 1512152587}
+--- !u!135 &781494383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781494379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0012313646
+  m_Center: {x: -2.3283064e-10, y: -1.7462295e-10, z: 2.3283064e-10}
+--- !u!114 &781494384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781494379}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
@@ -355,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1083425880}
   m_LocalRotation: {x: 0.11744172, y: -0, z: -0, w: 0.99307984}
-  m_LocalPosition: {x: 0, y: 7.4, z: -17.4}
+  m_LocalPosition: {x: 0, y: 6.72, z: -14.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -372,6 +436,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113fec7cf0142b84e97add890cc41993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1256844396 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+  m_PrefabInternal: {fileID: 1512152587}
+--- !u!64 &1256844400
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256844396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: eedd16ff314f7724e8c2575d0aea0037, type: 3}
+--- !u!114 &1256844401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256844396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7cd3e2f68b8a14aabdbee8742936ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectmaterial: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isSelected: 0
+  highlightColorTransition: 0
 --- !u!1001 &1512152587
 Prefab:
   m_ObjectHideFlags: 0
@@ -438,6 +536,18 @@ MonoBehaviour:
   highlightColor: {r: 0, g: 0, b: 0, a: 0}
   isSelected: 0
   highlightColorTransition: 0
+--- !u!65 &1585016757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585016752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028887082, y: 0.0039867093, z: 0.07315928}
+  m_Center: {x: -0.014493488, y: -0.0000070435913, z: -0.000012688569}
 --- !u!1 &1713838654 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: cfbb0a87f2964e44783291ff5b186b4b, type: 3}
