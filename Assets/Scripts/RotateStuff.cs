@@ -22,7 +22,8 @@ public class RotateStuff : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        // set up initial mode (rotate, translations, scale)
+        // set up initial mode (translation, rotate, scale)
+        // rotate mode is chosen as start
         ChangeModes(false, true, false);
 
 
