@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateStuff : MonoBehaviour {
+public class TransformationAndHighlight : MonoBehaviour {
 
     float smooth = 5.0f;
     float tiltAngle = 60.0f;

@@ -37,15 +37,15 @@ public class RayCastTest : MonoBehaviour {
                     Debug.Log("Change Material not found");
                 }
 
-                // for the newly made script "RotateStuff"; does the same thing as above block of code
-                RotateStuff _rotateStuffScript = rayCastHit.transform.GetComponent<RotateStuff>();
-                if (_rotateStuffScript)
+                // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
+                TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
+                if (_transformationAndHighlightScript)
                 {
-                    _rotateStuffScript.ChangeSelectedStatus();
+                    _transformationAndHighlightScript.ChangeSelectedStatus();
                 }
                 else
                 {
-                    Debug.Log("RotateStuff script not found");
+                    Debug.Log("TransformationAndHighlight script not found");
                 }
             }
         }
