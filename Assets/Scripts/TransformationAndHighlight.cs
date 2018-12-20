@@ -60,40 +60,44 @@ public class TransformationAndHighlight : MonoBehaviour {
 
 
 
-
-
-        if (translateMode)
+        if (isSelected)
         {
-            // Smoothly tilts a transform towards a target rotation.
-            float tiltAroundX = Input.GetAxis("Horizontal") * 10;
-            float tiltAroundY = Input.GetAxis("Vertical") * 10;
+            if (translateMode)
+            {
+                // Smoothly tilts a transform towards a target rotation.
+                float tiltAroundX = Input.GetAxis("Horizontal") * 10;
+                float tiltAroundY = Input.GetAxis("Vertical") * 10;
 
-            Vector3 target = startingPosition + new Vector3(tiltAroundX, tiltAroundY, 0);
+                Vector3 target = startingPosition + new Vector3(tiltAroundX, tiltAroundY, 0);
 
-            transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
+                transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
+            }
+            else if (rotateMode)
+            {
+                // Smoothly tilts a transform towards a target rotation.
+                float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
+                float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
+
+                Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+
+                // Dampen towards the target rotation
+                // transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * smooth);
+            }
+            else if (scaleMode)
+            {
+                // Smoothly tilts a transform towards a target rotation.
+                float tiltAroundZ = Input.GetAxis("Horizontal") * .6f;
+                float tiltAroundX = Input.GetAxis("Vertical") * .6f;
+
+                Vector3 target = startingScale + new Vector3(tiltAroundX, 0, tiltAroundZ);
+
+                transform.localScale = Vector3.Lerp(transform.localScale, target, Time.deltaTime * smooth);
+            }
         }
-        else if (rotateMode) {
-            // Smoothly tilts a transform towards a target rotation.
-            float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
-            float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
 
-            Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
-
-            // Dampen towards the target rotation
-            // transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * smooth);
-        }
-        else if (scaleMode) {
-            // Smoothly tilts a transform towards a target rotation.
-            float tiltAroundZ = Input.GetAxis("Horizontal") * .6f;
-            float tiltAroundX = Input.GetAxis("Vertical") * .6f;
-
-            Vector3 target = startingScale + new Vector3(tiltAroundX, 0, tiltAroundZ);
-
-            transform.localScale = Vector3.Lerp(transform.localScale, target, Time.deltaTime * smooth);
-        }
-
-
+       
+        // Get keyinput 
         if (Input.GetKeyDown(KeyCode.T))
         {
             ChangeModes(true, false, false);
