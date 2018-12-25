@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TransformationSelection : MonoBehaviour {
 
-	private GameObject selectedObject;
+	public GameObject selectedObject;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,10 @@ public class TransformationSelection : MonoBehaviour {
 
 	public void setSelectedObject(GameObject inSelectedObject)
 	{
+		Debug.Log("InSelectedObject: " + inSelectedObject.name);
+		Debug.Log("SelectedObject: " + selectedObject.name);
 		selectedObject = inSelectedObject;
+		Debug.Log("InSelectedObject: " + inSelectedObject.name);
+		Debug.Log("SelectedObject: " + selectedObject.name);
 	}
 }
