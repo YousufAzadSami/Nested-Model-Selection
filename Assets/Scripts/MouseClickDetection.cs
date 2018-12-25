@@ -26,7 +26,8 @@ public class MouseClickDetection : MonoBehaviour {
             if (Physics.Raycast(ray, out rayCastHit))
             {
                 Debug.Log(rayCastHit.transform.name);
-
+                
+                /*
                 // for the script "ChangeMaterial"
                 ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
                 if (_changeMaterial)
@@ -37,14 +38,21 @@ public class MouseClickDetection : MonoBehaviour {
                 {
                     Debug.Log("Change Material not found");
                 }
+                */
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
                 TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (_transformationAndHighlightScript)
                 {
-                    // unselect all 
-                    UnSelectAll();                  
-
+                    // if the object is already selected, then we just need to unselect it
+                    // no need to go unselect every object in the scene
+                    if(_transformationAndHighlightScript.SelectedStatus() == false)
+                    {
+                        // unselect all, then select the object so that only
+                        // one object is selected at a time
+                        UnSelectAll();
+                    }
+                    
                     // then select the current object
                     _transformationAndHighlightScript.ChangeSelectedStatus();
                 }

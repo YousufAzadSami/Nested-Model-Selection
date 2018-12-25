@@ -129,4 +129,9 @@ public class TransformationAndHighlight : MonoBehaviour {
     {
         isSelected = false;
     }
+
+    public bool SelectedStatus()
+    {
+        return isSelected;
+    }
 }
