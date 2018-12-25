@@ -16,6 +16,11 @@ public class TransformationSelection : MonoBehaviour {
 		
 	}
 
+	public void ChangeTranformationMode()
+	{
+		selectedObject.GetComponent<TransformationAndHighlight>().ChangeModes(true, false, false);
+	}
+
 	public void SetSelectedObject(GameObject inSelectedObject)
 	{
 		Debug.Log("InSelectedObject: " + inSelectedObject.name);

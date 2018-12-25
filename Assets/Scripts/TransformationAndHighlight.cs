@@ -113,7 +113,7 @@ public class TransformationAndHighlight : MonoBehaviour {
         
     }
 
-    private void ChangeModes(bool inModeTranslate, bool inModeRotate, bool inModeScale)
+    public void ChangeModes(bool inModeTranslate, bool inModeRotate, bool inModeScale)
     {
         translateMode = inModeTranslate;
         rotateMode = inModeRotate;
