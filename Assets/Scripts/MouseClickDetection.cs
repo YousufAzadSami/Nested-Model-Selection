@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseClickDetection : MonoBehaviour {
 
     private Camera cam;
+    private Ray ray;
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +15,8 @@ public class MouseClickDetection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
         RaycastHit rayCastHit;
 
