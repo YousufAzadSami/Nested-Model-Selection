@@ -42,6 +42,19 @@ public class MouseClickDetection : MonoBehaviour {
                 TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (_transformationAndHighlightScript)
                 {
+                    // unselect all 
+                    // this is not the optimal way of doing things, need optimization later (like tagging objects)
+                    TransformationAndHighlight[] _allSelectableObjects = FindObjectsOfType<TransformationAndHighlight>();
+                    
+                    
+                    foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
+                    {
+                        // Debug.Log("Name : " + _selectableObject.transform.name);
+                        _selectableObject.Unselect();
+                    }
+                    
+
+                    // then select the current object
                     _transformationAndHighlightScript.ChangeSelectedStatus();
                 }
                 else

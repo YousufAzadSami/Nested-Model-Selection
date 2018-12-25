@@ -124,4 +124,9 @@ public class TransformationAndHighlight : MonoBehaviour {
     {
         isSelected = !isSelected;
     }
+
+    public void Unselect()
+    {
+        isSelected = false;
+    }
 }
