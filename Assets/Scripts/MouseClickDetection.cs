@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseClickDetection : MonoBehaviour {
 
     private Camera cam;
     private Ray ray;
+
+    // UI references. When an object is selected, show them
+    // Currently going with adhoc approach
+    public Button translate;
+    public Button rotate;
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +61,10 @@ public class MouseClickDetection : MonoBehaviour {
                     
                     // then select the current object
                     _transformationAndHighlightScript.ChangeSelectedStatus();
+
+                    // if any GameObject is selected, enable the related UIs as well and vice versa
+                    EnableUI(_transformationAndHighlightScript.SelectedStatus());
+                    
                 }
                 else
                 {
@@ -74,6 +84,12 @@ public class MouseClickDetection : MonoBehaviour {
             // Debug.Log("Name : " + _selectableObject.transform.name);
             _selectableObject.Unselect();
         }
+    }
+
+    private void EnableUI(bool inActive)
+    {
+        translate.gameObject.SetActive(inActive);
+        rotate.gameObject.SetActive(inActive);
     }
 
     void OnGUI()
