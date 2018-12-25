@@ -43,16 +43,7 @@ public class MouseClickDetection : MonoBehaviour {
                 if (_transformationAndHighlightScript)
                 {
                     // unselect all 
-                    // this is not the optimal way of doing things, need optimization later (like tagging objects)
-                    TransformationAndHighlight[] _allSelectableObjects = FindObjectsOfType<TransformationAndHighlight>();
-                    
-                    
-                    foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
-                    {
-                        // Debug.Log("Name : " + _selectableObject.transform.name);
-                        _selectableObject.Unselect();
-                    }
-                    
+                    UnSelectAll();                  
 
                     // then select the current object
                     _transformationAndHighlightScript.ChangeSelectedStatus();
@@ -62,6 +53,18 @@ public class MouseClickDetection : MonoBehaviour {
                     Debug.Log("TransformationAndHighlight script not found");
                 }
             }
+        }
+    }
+
+    public void UnSelectAll()
+    {
+        // this is not the optimal way of doing things, need optimization later (like tagging objects)
+        TransformationAndHighlight[] _allSelectableObjects = FindObjectsOfType<TransformationAndHighlight>();
+        
+        foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
+        {
+            // Debug.Log("Name : " + _selectableObject.transform.name);
+            _selectableObject.Unselect();
         }
     }
 
