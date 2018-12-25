@@ -63,7 +63,7 @@ public class MouseClickDetection : MonoBehaviour {
                     _transformationAndHighlightScript.ChangeSelectedStatus();
 
                     // if any GameObject is selected, enable the related UIs as well and vice versa
-                    EnableUI(_transformationAndHighlightScript.SelectedStatus());
+                    SetActiveUI(_transformationAndHighlightScript.SelectedStatus());
                     
                 }
                 else
@@ -86,7 +86,7 @@ public class MouseClickDetection : MonoBehaviour {
         }
     }
 
-    private void EnableUI(bool inActive)
+    private void SetActiveUI(bool inActive)
     {
         translate.gameObject.SetActive(inActive);
         rotate.gameObject.SetActive(inActive);
