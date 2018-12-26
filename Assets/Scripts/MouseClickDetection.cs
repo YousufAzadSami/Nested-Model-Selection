@@ -14,6 +14,8 @@ public class MouseClickDetection : MonoBehaviour {
     public Button translate;
     public Button rotate;
 
+    private GameObject selectedGameObject;
+
 	// Use this for initialization
 	void Start () {
         camera = Camera.main;
@@ -45,7 +47,7 @@ public class MouseClickDetection : MonoBehaviour {
                 */
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
-                GameObject selectedGameObject = rayCastHit.transform.gameObject;
+                selectedGameObject = rayCastHit.transform.gameObject;
                 TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (_transformationAndHighlightScript)
                 {
@@ -81,7 +83,7 @@ public class MouseClickDetection : MonoBehaviour {
             UnSelectAll();
         }
         
-        // then select the current object
+        // then select/unselect the current object
         inTransformationAndHighlightScript.ChangeSelectedStatus();
     }
 
@@ -107,6 +109,11 @@ public class MouseClickDetection : MonoBehaviour {
     {
         translate.GetComponent<TransformationSelection>().SetSelectedObject(inGameObject);
         // rotate.GetComponent<TransformationSelection>().SetSelectedObject(inGameObject);
+    }
+
+    public GameObject GetSelectedGameObject()
+    {
+        return selectedGameObject;
     }
 
     void OnGUI()
