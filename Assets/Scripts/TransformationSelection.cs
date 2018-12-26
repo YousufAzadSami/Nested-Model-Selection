@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TransformationSelection : MonoBehaviour {
 
-	public GameObject selectedObject;
 	public MouseClickDetection mouseClickSelection;
 
 	void Awake () {
@@ -19,7 +18,7 @@ public class TransformationSelection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -29,11 +28,16 @@ public class TransformationSelection : MonoBehaviour {
 
 	public void ChangeTranformationMode()
 	{
-		selectedObject.GetComponent<TransformationAndHighlight>().ChangeModes(true, false, false);
-	}
-
-	public void SetSelectedObject(GameObject inSelectedObject)
-	{
-		selectedObject = inSelectedObject;
+		// The button/s should be visible only when an object is selected
+		// And if an object is selelcted, then this condition should be true
+		// In other words, this condition should always be true
+		if(mouseClickSelection.GetSelectedGameObject())
+		{
+			mouseClickSelection.GetSelectedGameObject().GetComponent<TransformationAndHighlight>().ChangeModes(true, false, false);
+		}
+		else 
+		{
+			Debug.LogError("Something is wrong, check comment", mouseClickSelection.GetSelectedGameObject());
+		}
 	}
 }
