@@ -43,7 +43,6 @@ public class MouseClickDetection : MonoBehaviour {
                 {
                     SelectObjectRelatedStuff(_transformationAndHighlightScript);
 
-
                     // if any GameObject is selected, enable the related UIs as well and vice versa
                     SetActiveUI(_transformationAndHighlightScript.SelectedStatus());
                 }
@@ -55,6 +54,8 @@ public class MouseClickDetection : MonoBehaviour {
         }
     }
 
+    // Unselect all other GameObject, Select the GameObject
+    // Or just unselect the already clicked selected GameObject
     private void SelectObjectRelatedStuff(TransformationAndHighlight inTransformationAndHighlightScript)
     {
         // if the object is already selected, then we just need to unselect it
