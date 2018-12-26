@@ -33,7 +33,14 @@ public class TransformationSelection : MonoBehaviour {
 		// In other words, this condition should always be true
 		if(mouseClickSelection.GetSelectedGameObject())
 		{
-			mouseClickSelection.GetSelectedGameObject().GetComponent<TransformationAndHighlight>().ChangeModes(true, false, false);
+			// all selectable GameObjects should have the same transformation mode. 
+			// If the user selects the translate button for one object then, 
+			// selects another object user would expect it to tranlate as well
+			TransformationAndHighlight[] allSelectableGameObjects = mouseClickSelection.FindAllSelectableGameObjects();
+			foreach(TransformationAndHighlight selectableGameObject in allSelectableGameObjects)
+			{
+				selectableGameObject.ChangeModes(true, false, false);
+			}
 		}
 		else 
 		{

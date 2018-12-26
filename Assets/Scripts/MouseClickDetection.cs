@@ -88,7 +88,7 @@ public class MouseClickDetection : MonoBehaviour
     public void UnSelectAll()
     {
         // this is not the optimal way of doing things, need optimization later (like tagging objects)
-        TransformationAndHighlight[] _allSelectableObjects = FindObjectsOfType<TransformationAndHighlight>();
+        TransformationAndHighlight[] _allSelectableObjects = FindAllSelectableGameObjects();
 
         foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
         {
@@ -106,6 +106,13 @@ public class MouseClickDetection : MonoBehaviour
     public GameObject GetSelectedGameObject()
     {
         return selectedGameObject;
+    }
+
+    // Returns all the TransformationAndHighlight component of the selectable objects
+    // TODO : Return the whole gameobject for more flexibility
+    public TransformationAndHighlight[] FindAllSelectableGameObjects()
+    {
+        return FindObjectsOfType<TransformationAndHighlight>();
     }
 
     // for the script "ChangeMaterial", currently obsolete
