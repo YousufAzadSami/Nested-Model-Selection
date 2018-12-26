@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseClickDetection : MonoBehaviour {
+public class MouseClickDetection : MonoBehaviour
+{
 
     private Camera camera;
     private Ray ray;
@@ -16,14 +17,16 @@ public class MouseClickDetection : MonoBehaviour {
 
     private GameObject selectedGameObject;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         camera = Camera.main;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
@@ -32,9 +35,9 @@ public class MouseClickDetection : MonoBehaviour {
             if (Physics.Raycast(ray, out rayCastHit))
             {
                 // Debug.Log(rayCastHit.transform.name);
-                
+
                 // ChangeMaterialRelatedStuff();
-                
+
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
                 selectedGameObject = rayCastHit.transform.gameObject;
@@ -60,22 +63,24 @@ public class MouseClickDetection : MonoBehaviour {
     {
         // if the object is already selected, then we just need to unselect it
         // no need to go unselect every object in the scene
-        if(inTransformationAndHighlightScript.SelectedStatus() == false)
+        if (inTransformationAndHighlightScript.SelectedStatus() == false)
         {
             // unselect all, then select the object so that only
             // one object is selected at a time
             UnSelectAll();
         }
-        
+
         // then select/unselect the current object
         inTransformationAndHighlightScript.ChangeSelectedStatus();
 
         // if the object is selected, then set it to variable selectedGameObject
         // if unselected, set it to null
-        if(inTransformationAndHighlightScript.SelectedStatus()) {
+        if (inTransformationAndHighlightScript.SelectedStatus())
+        {
             // it was already set at the start
         }
-        else{
+        else
+        {
             selectedGameObject = null;
         }
     }
@@ -84,7 +89,7 @@ public class MouseClickDetection : MonoBehaviour {
     {
         // this is not the optimal way of doing things, need optimization later (like tagging objects)
         TransformationAndHighlight[] _allSelectableObjects = FindObjectsOfType<TransformationAndHighlight>();
-        
+
         foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
         {
             // Debug.Log("Name : " + _selectableObject.transform.name);
@@ -104,7 +109,8 @@ public class MouseClickDetection : MonoBehaviour {
     }
 
     // for the script "ChangeMaterial", currently obsolete
-    private void ChangeMaterialRelatedStuff() {
+    private void ChangeMaterialRelatedStuff()
+    {
         ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
         if (_changeMaterial)
         {
@@ -114,7 +120,7 @@ public class MouseClickDetection : MonoBehaviour {
         {
             Debug.Log("Change Material not found");
         }
-}
+    }
 
     void OnGUI()
     {
