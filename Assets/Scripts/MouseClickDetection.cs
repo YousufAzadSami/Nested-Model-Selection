@@ -41,7 +41,7 @@ public class MouseClickDetection : MonoBehaviour {
                 TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (_transformationAndHighlightScript)
                 {
-                    SelectObjectStuff(_transformationAndHighlightScript);
+                    SelectObjectRelatedStuff(_transformationAndHighlightScript);
 
 
                     // if any GameObject is selected, enable the related UIs as well and vice versa
@@ -62,7 +62,7 @@ public class MouseClickDetection : MonoBehaviour {
         }
     }
 
-    private void SelectObjectStuff(TransformationAndHighlight inTransformationAndHighlightScript)
+    private void SelectObjectRelatedStuff(TransformationAndHighlight inTransformationAndHighlightScript)
     {
         // if the object is already selected, then we just need to unselect it
         // no need to go unselect every object in the scene
