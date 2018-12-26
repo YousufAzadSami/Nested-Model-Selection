@@ -23,10 +23,6 @@ public class TransformationSelection : MonoBehaviour {
 
 	public void SetSelectedObject(GameObject inSelectedObject)
 	{
-		Debug.Log("InSelectedObject: " + inSelectedObject.name);
-		// Debug.Log("SelectedObject: " + selectedObject.name);
 		selectedObject = inSelectedObject;
-		Debug.Log("InSelectedObject: " + inSelectedObject.name);
-		Debug.Log("SelectedObject: " + selectedObject.name);
 	}
 }

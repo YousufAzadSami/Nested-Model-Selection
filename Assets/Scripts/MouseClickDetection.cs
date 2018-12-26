@@ -66,8 +66,8 @@ public class MouseClickDetection : MonoBehaviour {
                     // if any GameObject is selected, enable the related UIs as well and vice versa
                     SetActiveUI(_transformationAndHighlightScript.SelectedStatus());
 
-                    // if the object is selected, then let the Translate & Rotate button
-                    // know which object was selected
+                    // if new object is selected(as opposed to click to unselect), 
+                    // then let the Translate & Rotate button know which object was selected
                     if(_transformationAndHighlightScript.SelectedStatus())
                     {
                         SetSelectedGameObjectInButtions(selectedGameObject);
