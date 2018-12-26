@@ -5,6 +5,17 @@ using UnityEngine;
 public class TransformationSelection : MonoBehaviour {
 
 	public GameObject selectedObject;
+	public MouseClickDetection mouseClickSelection;
+
+	void Awake () {
+		// not the best of soulution, but will go with the adhoc approach for now
+		mouseClickSelection = FindObjectOfType<MouseClickDetection>();
+
+		if(mouseClickSelection == null)
+		{
+			Debug.LogError("mouseClickSelection NOT FOUND!!!");
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
