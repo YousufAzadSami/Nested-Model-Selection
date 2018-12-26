@@ -33,18 +33,8 @@ public class MouseClickDetection : MonoBehaviour {
             {
                 // Debug.Log(rayCastHit.transform.name);
                 
-                /*
-                // for the script "ChangeMaterial"
-                ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
-                if (_changeMaterial)
-                {
-                    _changeMaterial.DoSomeHighlightStuff();
-                }
-                else
-                {
-                    Debug.Log("Change Material not found");
-                }
-                */
+                // ChangeMaterialRelatedStuff();
+                
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
                 selectedGameObject = rayCastHit.transform.gameObject;
@@ -115,6 +105,19 @@ public class MouseClickDetection : MonoBehaviour {
     {
         return selectedGameObject;
     }
+
+    // for the script "ChangeMaterial", currently obsolete
+    private void ChangeMaterialRelatedStuff() {
+        ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
+        if (_changeMaterial)
+        {
+            _changeMaterial.DoSomeHighlightStuff();
+        }
+        else
+        {
+            Debug.Log("Change Material not found");
+        }
+}
 
     void OnGUI()
     {
