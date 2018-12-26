@@ -75,6 +75,15 @@ public class MouseClickDetection : MonoBehaviour {
         
         // then select/unselect the current object
         inTransformationAndHighlightScript.ChangeSelectedStatus();
+
+        // if the object is selected, then set it to variable selectedGameObject
+        // if unselected, set it to null
+        if(inTransformationAndHighlightScript.SelectedStatus()) {
+            // it was already set at the start
+        }
+        else{
+            selectedGameObject = null;
+        }
     }
 
     public void UnSelectAll()
