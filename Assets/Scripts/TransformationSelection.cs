@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class TransformationSelection : MonoBehaviour {
 
+	enum TransformationMode 
+	{
+		Translate,
+		Rotate,
+		Scale
+	}
+
 	public MouseClickDetection mouseClickSelection;
 
 	void Awake () {
@@ -26,8 +33,12 @@ public class TransformationSelection : MonoBehaviour {
 		
 	}
 
-	public void ChangeTranformationMode()
+	public void ChangeTranformationMode(int inTransformationMode)
 	{
+		bool _translate, _rotate, _scale;
+		SetTransformationModeFlags(inTransformationMode, out _translate, out _rotate, out _scale);
+		// set the boolen values for transformation mode 
+
 		// The button/s should be visible only when an object is selected
 		// And if an object is selelcted, then this condition should be true
 		// In other words, this condition should always be true
@@ -36,15 +47,38 @@ public class TransformationSelection : MonoBehaviour {
 			// all selectable GameObjects should have the same transformation mode. 
 			// If the user selects the translate button for one object then, 
 			// selects another object user would expect it to tranlate as well
-			TransformationAndHighlight[] allSelectableGameObjects = mouseClickSelection.FindAllSelectableGameObjects();
-			foreach(TransformationAndHighlight selectableGameObject in allSelectableGameObjects)
+			TransformationAndHighlight[] _allSelectableGameObjects = mouseClickSelection.FindAllSelectableGameObjects();
+			foreach(TransformationAndHighlight _selectableGameObject in _allSelectableGameObjects)
 			{
-				selectableGameObject.ChangeModes(true, false, false);
+				_selectableGameObject.ChangeModes(_translate, _rotate, _scale);
 			}
 		}
 		else 
 		{
 			Debug.LogError("Something is wrong, check comment", mouseClickSelection.GetSelectedGameObject());
+		}
+	}
+
+	private void SetTransformationModeFlags(
+		int inTransformationMode, out bool inTranslate, out bool inRotate, out bool inScale)
+	{
+		inTranslate = inRotate = inScale = false;
+
+		if (inTransformationMode == (int)TransformationMode.Translate)
+        {
+            inTranslate = true;
+        }
+        else if (inTransformationMode == (int)TransformationMode.Rotate)
+        {
+			inRotate = true;
+        }
+        else if (inTransformationMode == (int)TransformationMode.Scale)
+        {
+			inScale = true;
+        }
+		else 
+		{
+			Debug.LogError("Invalid state");
 		}
 	}
 }
