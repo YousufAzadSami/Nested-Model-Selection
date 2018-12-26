@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MouseClickDetection : MonoBehaviour
 {
 
-    private Camera camera;
+    private Camera mainCamera;
     private Ray ray;
     private RaycastHit rayCastHit;
 
@@ -20,14 +20,14 @@ public class MouseClickDetection : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
         if (Input.GetMouseButtonDown(0))
@@ -138,12 +138,12 @@ public class MouseClickDetection : MonoBehaviour
         // Get the mouse position from Event.
         // Note that the y position from Event is inverted.
         mousePos.x = currentEvent.mousePosition.x;
-        mousePos.y = camera.pixelHeight - currentEvent.mousePosition.y;
+        mousePos.y = mainCamera.pixelHeight - currentEvent.mousePosition.y;
 
-        point = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, camera.nearClipPlane));
+        point = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.nearClipPlane));
 
         GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-        GUILayout.Label("Screen pixels: " + camera.pixelWidth + ":" + camera.pixelHeight);
+        GUILayout.Label("Screen pixels: " + mainCamera.pixelWidth + ":" + mainCamera.pixelHeight);
         GUILayout.Label("Mouse position: " + mousePos);
         GUILayout.Label("World position: " + point.ToString("F3"));
         GUILayout.EndArea();
