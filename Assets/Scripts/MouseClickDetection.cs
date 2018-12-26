@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class MouseClickDetection : MonoBehaviour {
 
-    private Camera cam;
+    private Camera camera;
     private Ray ray;
+    private RaycastHit rayCastHit;
 
     // UI references. When an object is selected, show them
     // Currently going with adhoc approach
@@ -15,7 +16,7 @@ public class MouseClickDetection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        cam = Camera.main;
+        camera = Camera.main;
 	}
 	
 	// Update is called once per frame
@@ -23,9 +24,6 @@ public class MouseClickDetection : MonoBehaviour {
         
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
-
-        RaycastHit rayCastHit;
-
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -51,17 +49,8 @@ public class MouseClickDetection : MonoBehaviour {
                 TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (_transformationAndHighlightScript)
                 {
-                    // if the object is already selected, then we just need to unselect it
-                    // no need to go unselect every object in the scene
-                    if(_transformationAndHighlightScript.SelectedStatus() == false)
-                    {
-                        // unselect all, then select the object so that only
-                        // one object is selected at a time
-                        UnSelectAll();
-                    }
-                    
-                    // then select the current object
-                    _transformationAndHighlightScript.ChangeSelectedStatus();
+                    SelectObjectStuff(_transformationAndHighlightScript);
+
 
                     // if any GameObject is selected, enable the related UIs as well and vice versa
                     SetActiveUI(_transformationAndHighlightScript.SelectedStatus());
@@ -79,6 +68,21 @@ public class MouseClickDetection : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void SelectObjectStuff(TransformationAndHighlight inTransformationAndHighlightScript)
+    {
+        // if the object is already selected, then we just need to unselect it
+        // no need to go unselect every object in the scene
+        if(inTransformationAndHighlightScript.SelectedStatus() == false)
+        {
+            // unselect all, then select the object so that only
+            // one object is selected at a time
+            UnSelectAll();
+        }
+        
+        // then select the current object
+        inTransformationAndHighlightScript.ChangeSelectedStatus();
     }
 
     public void UnSelectAll()
@@ -114,12 +118,12 @@ public class MouseClickDetection : MonoBehaviour {
         // Get the mouse position from Event.
         // Note that the y position from Event is inverted.
         mousePos.x = currentEvent.mousePosition.x;
-        mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
+        mousePos.y = camera.pixelHeight - currentEvent.mousePosition.y;
 
-        point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
+        point = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, camera.nearClipPlane));
 
         GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-        GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
+        GUILayout.Label("Screen pixels: " + camera.pixelWidth + ":" + camera.pixelHeight);
         GUILayout.Label("Mouse position: " + mousePos);
         GUILayout.Label("World position: " + point.ToString("F3"));
         GUILayout.EndArea();
