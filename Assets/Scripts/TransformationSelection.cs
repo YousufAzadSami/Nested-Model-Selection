@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class TransformationSelection : MonoBehaviour {
 		Scale
 	}
 
-	public MouseClickDetection mouseClickDetection;
+	private MouseClickDetection mouseClickDetection;
 
 	void Awake () {
 		// not the best of soulution, but will go with the adhoc approach for now
