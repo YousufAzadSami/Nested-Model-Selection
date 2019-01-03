@@ -35,8 +35,8 @@ public class TransformationSelection : MonoBehaviour {
 
 	public void ChangeTranformationMode(int inTransformationMode)
 	{
-		bool _translate, _rotate, _scale;
-		SetTransformationModeFlags(inTransformationMode, out _translate, out _rotate, out _scale);
+		bool translate, rotate, scale;
+		SetTransformationModeFlags(inTransformationMode, out translate, out rotate, out scale);
 		// set the boolen values for transformation mode 
 
 		// The button/s should be visible only when an object is selected
@@ -47,10 +47,10 @@ public class TransformationSelection : MonoBehaviour {
 			// all selectable GameObjects should have the same transformation mode. 
 			// If the user selects the translate button for one object then, 
 			// selects another object user would expect it to tranlate as well
-			TransformationAndHighlight[] _allSelectableGameObjects = mouseClickDetection.FindAllSelectableGameObjects();
-			foreach(TransformationAndHighlight _selectableGameObject in _allSelectableGameObjects)
+			TransformationAndHighlight[] allSelectableGameObjects = mouseClickDetection.FindAllSelectableGameObjects();
+			foreach(TransformationAndHighlight selectableGameObject in allSelectableGameObjects)
 			{
-				_selectableGameObject.ChangeModes(_translate, _rotate, _scale);
+				selectableGameObject.ChangeModes(translate, rotate, scale);
 			}
 		}
 		else 

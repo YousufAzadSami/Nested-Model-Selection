@@ -41,13 +41,13 @@ public class MouseClickDetection : MonoBehaviour
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
                 selectedGameObject = rayCastHit.transform.gameObject;
-                TransformationAndHighlight _transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
-                if (_transformationAndHighlightScript)
+                TransformationAndHighlight transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
+                if (transformationAndHighlightScript)
                 {
-                    SelectObjectRelatedStuff(_transformationAndHighlightScript);
+                    SelectObjectRelatedStuff(transformationAndHighlightScript);
 
                     // if any GameObject is selected, enable the related UIs as well and vice versa
-                    SetActiveUI(_transformationAndHighlightScript.SelectedStatus());
+                    SetActiveUI(transformationAndHighlightScript.SelectedStatus());
                 }
                 else
                 {
@@ -88,12 +88,12 @@ public class MouseClickDetection : MonoBehaviour
     public void UnSelectAll()
     {
         // this is not the optimal way of doing things, need optimization later (like tagging objects)
-        TransformationAndHighlight[] _allSelectableObjects = FindAllSelectableGameObjects();
+        TransformationAndHighlight[] allSelectableObjects = FindAllSelectableGameObjects();
 
-        foreach (TransformationAndHighlight _selectableObject in _allSelectableObjects)
+        foreach (TransformationAndHighlight selectableObject in allSelectableObjects)
         {
             // Debug.Log("Name : " + _selectableObject.transform.name);
-            _selectableObject.Unselect();
+            selectableObject.Unselect();
         }
     }
 
@@ -118,10 +118,10 @@ public class MouseClickDetection : MonoBehaviour
     // for the script "ChangeMaterial", currently obsolete
     private void ChangeMaterialRelatedStuff()
     {
-        ChangeMaterial _changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
-        if (_changeMaterial)
+        ChangeMaterial changeMaterial = rayCastHit.transform.GetComponent<ChangeMaterial>();
+        if (changeMaterial)
         {
-            _changeMaterial.DoSomeHighlightStuff();
+            changeMaterial.DoSomeHighlightStuff();
         }
         else
         {
