@@ -77,7 +77,7 @@ public class TransformationAndHighlight : MonoBehaviour {
                 float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
                 float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
 
-                Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+                Quaternion target = transform.rotation * Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
                 // Dampen towards the target rotation
                 // transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
