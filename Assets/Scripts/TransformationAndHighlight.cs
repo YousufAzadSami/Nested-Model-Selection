@@ -23,12 +23,8 @@ public class TransformationAndHighlight : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // set up initial mode (translation, rotate, scale)
-        // rotate mode is chosen as start
-        ChangeModes(false, true, false);
-
-
-        startingPosition = transform.position;
-        startingScale = transform.localScale;
+        // No mode is chosen as start
+        ChangeModes(false, false, false);
 
         // highlight color stuff
         objectmaterial = GetComponent<Renderer>().material;
@@ -68,7 +64,10 @@ public class TransformationAndHighlight : MonoBehaviour {
                 float tiltAroundX = Input.GetAxis("Horizontal") * 10;
                 float tiltAroundY = Input.GetAxis("Vertical") * 10;
 
-                Vector3 target = startingPosition + new Vector3(tiltAroundX, tiltAroundY, 0);
+                // Debug.Log("Input.GetAxis(Horizontal): " + Input.GetAxis("Horizontal"));
+                // Debug.Log("tiltAroundX: " + tiltAroundX);
+
+                Vector3 target = transform.position + new Vector3(tiltAroundX, tiltAroundY, 0);
 
                 transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
             }
@@ -90,7 +89,7 @@ public class TransformationAndHighlight : MonoBehaviour {
                 float tiltAroundZ = Input.GetAxis("Horizontal") * .6f;
                 float tiltAroundX = Input.GetAxis("Vertical") * .6f;
 
-                Vector3 target = startingScale + new Vector3(tiltAroundX, 0, tiltAroundZ);
+                Vector3 target = transform.localScale + new Vector3(tiltAroundX, 0, tiltAroundZ);
 
                 transform.localScale = Vector3.Lerp(transform.localScale, target, Time.deltaTime * smooth);
             }
