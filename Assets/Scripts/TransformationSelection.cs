@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +35,11 @@ public class TransformationSelection : MonoBehaviour {
 
 	public void ChangeTranformationMode(int inTransformationMode)
 	{
+		// disable all other transformation related UI when one is selected
+		// for example, if "Translate" mode is selected, disable "Rotate" and "Scale"
+		DisableOtherTransformationUI();
+
+
 		bool translate, rotate, scale;
 		SetTransformationModeFlags(inTransformationMode, out translate, out rotate, out scale);
 		// set the boolen values for transformation mode 
@@ -79,6 +84,23 @@ public class TransformationSelection : MonoBehaviour {
 		else 
 		{
 			Debug.LogError("Invalid state");
+		}
+	}
+
+	private void DisableOtherTransformationUI()
+	{
+		Transform parent = this.transform.parent;
+		
+		// iterating over all the children of the parent 
+		// in other words, iterating over all the siblings in this case 
+		// since it's run from the sibilings GameObject
+		for(int i = 0; i < parent.childCount; i++)
+		{
+			GameObject child = parent.GetChild(i).gameObject;
+			if(child.GetInstanceID() != this.gameObject.GetInstanceID())
+			{
+				child.SetActive(false);
+			}
 		}
 	}
 }
