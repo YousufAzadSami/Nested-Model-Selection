@@ -39,29 +39,7 @@ public class TransformationSelection : MonoBehaviour {
 		// for example, if "Translate" mode is selected, disable "Rotate" and "Scale"
 		DisableOtherTransformationUI();
 
-
-		bool translate, rotate, scale;
-		SetTransformationModeFlags(inTransformationMode, out translate, out rotate, out scale);
-		// set the boolen values for transformation mode 
-
-		// The button/s should be visible only when an object is selected
-		// And if an object is selelcted, then this condition should be true
-		// In other words, this condition should always be true
-		if(mouseClickDetection.GetSelectedGameObject())
-		{
-			// all selectable GameObjects should have the same transformation mode. 
-			// If the user selects the translate button for one object then, 
-			// selects another object user would expect it to tranlate as well
-			TransformationAndHighlight[] allSelectableGameObjects = mouseClickDetection.FindAllSelectableGameObjects();
-			foreach(TransformationAndHighlight selectableGameObject in allSelectableGameObjects)
-			{
-				selectableGameObject.ChangeModes(translate, rotate, scale);
-			}
-		}
-		else 
-		{
-			Debug.LogError("Something is wrong, check comment", mouseClickDetection.GetSelectedGameObject());
-		}
+		SetTransformationModeInGameobjects(inTransformationMode);
 	}
 
 	private void SetTransformationModeFlags(
@@ -84,6 +62,32 @@ public class TransformationSelection : MonoBehaviour {
 		else 
 		{
 			Debug.LogError("Invalid state");
+		}
+	}
+
+	private void SetTransformationModeInGameobjects(int inTransformationMode)
+	{
+		bool translate, rotate, scale;
+		SetTransformationModeFlags(inTransformationMode, out translate, out rotate, out scale);
+		// set the boolen values for transformation mode 
+
+		// The button/s should be visible only when an object is selected
+		// And if an object is selelcted, then this condition should be true
+		// In other words, this condition should always be true
+		if(mouseClickDetection.GetSelectedGameObject())
+		{
+			// all selectable GameObjects should have the same transformation mode. 
+			// If the user selects the translate button for one object then, 
+			// selects another object user would expect it to tranlate as well
+			TransformationAndHighlight[] allSelectableGameObjects = mouseClickDetection.FindAllSelectableGameObjects();
+			foreach(TransformationAndHighlight selectableGameObject in allSelectableGameObjects)
+			{
+				selectableGameObject.ChangeModes(translate, rotate, scale);
+			}
+		}
+		else 
+		{
+			Debug.LogError("Something is wrong, check comment", mouseClickDetection.GetSelectedGameObject());
 		}
 	}
 
