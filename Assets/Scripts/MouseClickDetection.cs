@@ -102,8 +102,11 @@ public class MouseClickDetection : MonoBehaviour
         // we can either traverse all Transformation related UI 
         // meaning `Tranlate`, `Rotate` or we can hardcode it here
         // for now going with hardcode the approach
-        translate.gameObject.SetActive(inActive);
-        rotate.gameObject.SetActive(inActive);
+        // translate.gameObject.SetActive(inActive);
+        // rotate.gameObject.SetActive(inActive);
+
+        translate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection();
+        rotate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection();
     }
 
     public GameObject GetSelectedGameObject()

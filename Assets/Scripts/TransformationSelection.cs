@@ -11,6 +11,9 @@ public class TransformationSelection : MonoBehaviour {
 		Scale
 	}
 
+	// Child object
+	Transform axisControl;
+
 	private MouseClickDetection mouseClickDetection;
 
 	void Awake () {
@@ -20,6 +23,13 @@ public class TransformationSelection : MonoBehaviour {
 		if(mouseClickDetection == null)
 		{
 			Debug.LogError("mouseClickSelection NOT FOUND!!!");
+		}
+
+		// set the child gameobject with the name "AxisControl"
+		axisControl = transform.Find("AxisControl");
+		if(axisControl == null)
+		{
+			Debug.LogError("Child(AxisControl) not found");
 		}
 	}
 
@@ -40,6 +50,17 @@ public class TransformationSelection : MonoBehaviour {
 		DisableOtherTransformationUI();
 
 		SetTransformationModeInGameobjects(inTransformationMode);
+
+		// sets the child(AxisControl) uis active 
+		Transform axisControl = transform.Find("AxisControl");
+		if(axisControl)
+		{
+			axisControl.gameObject.SetActive(true);
+		}
+		else
+		{
+			Debug.LogError("Child(AxisControl) not found");
+		}
 	}
 
 	private void SetTransformationModeFlags(
@@ -106,5 +127,11 @@ public class TransformationSelection : MonoBehaviour {
 				child.SetActive(false);
 			}
 		}
+	}
+
+	public void SetUpUiUponObjectSelection()
+	{
+		this.gameObject.SetActive(true);
+		axisControl.gameObject.SetActive(false);
 	}
 }
