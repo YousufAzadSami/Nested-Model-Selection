@@ -12,7 +12,7 @@ public class TransformationSelection : MonoBehaviour {
 	}
 
 	// Child object
-	Transform axisControl;
+	private Transform axisControl;
 
 	private MouseClickDetection mouseClickDetection;
 
@@ -116,7 +116,9 @@ public class TransformationSelection : MonoBehaviour {
 			GameObject child = parent.GetChild(i).gameObject;
 			if(child.GetInstanceID() != this.gameObject.GetInstanceID())
 			{
-				child.SetActive(false);
+				// from each sigblinghs, access the axisControl componenet which is
+				// located in their children and do stuff
+				child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.SetActive(false);
 			}
 		}
 	}
@@ -125,5 +127,10 @@ public class TransformationSelection : MonoBehaviour {
 	{
 		this.gameObject.SetActive(true);
 		axisControl.gameObject.SetActive(false);
+	}
+
+	public Transform getChildAxisControl()
+	{
+		return axisControl;
 	}
 }
