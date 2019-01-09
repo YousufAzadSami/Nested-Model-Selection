@@ -52,15 +52,7 @@ public class TransformationSelection : MonoBehaviour {
 		SetTransformationModeInGameobjects(inTransformationMode);
 
 		// sets the child(AxisControl) uis active 
-		Transform axisControl = transform.Find("AxisControl");
-		if(axisControl)
-		{
-			axisControl.gameObject.SetActive(true);
-		}
-		else
-		{
-			Debug.LogError("Child(AxisControl) not found");
-		}
+		axisControl.gameObject.SetActive(true);
 	}
 
 	private void SetTransformationModeFlags(
