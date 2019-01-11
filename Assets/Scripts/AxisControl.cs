@@ -13,4 +13,14 @@ public class AxisControl : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void XDown() 
+	{
+
+	}
+
+	public void XUp()
+	{
+		
+	}
 }
