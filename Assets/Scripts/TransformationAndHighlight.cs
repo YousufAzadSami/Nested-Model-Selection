@@ -20,7 +20,9 @@ public class TransformationAndHighlight : MonoBehaviour {
     public bool isSelected; // if selected, change the color to highlightColor
     public float highlightColorTransition;
 
-    public float xValue;
+    private float xValue;
+    private float yValue;
+    private float zValue;
 
     // Use this for initialization
     void Start () {
@@ -70,7 +72,7 @@ public class TransformationAndHighlight : MonoBehaviour {
                 // Debug.Log("tiltAroundX: " + tiltAroundX);
 
                 //Vector3 target = transform.position + new Vector3(tiltAroundX, tiltAroundY, 0);
-                Vector3 target = transform.position + new Vector3(xValue, tiltAroundY, 0);
+                Vector3 target = transform.position + new Vector3(xValue, yValue, zValue);
 
                 transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
             }
@@ -141,5 +143,15 @@ public class TransformationAndHighlight : MonoBehaviour {
     public void SetXValue(float inXValue)
     {
         xValue = inXValue;
+    }
+
+    public void SetYValue(float inYValue)
+    {
+        yValue = inYValue;
+    }
+
+    public void SetZValue(float inZValue)
+    {
+        zValue = inZValue;
     }
 }
