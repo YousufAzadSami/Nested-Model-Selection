@@ -8,6 +8,8 @@ public class AxisControl : MonoBehaviour {
     private float xValueSign;
     private float xValue;
     private float maxXValue;
+    private MouseClickDetection mouseClickDetection;
+    private GameObject selectedGameObject;
 
     // Use this for initialization
     void Start () {
@@ -19,12 +21,29 @@ public class AxisControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isXDown)
+
+        // uncomment the next line to see what happens and try dealing with it better
+        // if (isXDown)
         {
             // call the functions necessary to tranlate
             xValue = Mathf.MoveTowards(xValue, maxXValue * xValueSign, Time.deltaTime);
+
+            if (mouseClickDetection)
+            {
+                selectedGameObject.GetComponent<TransformationAndHighlight>().SetXValue(xValue);
+            }
+            else
+            {
+                Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
+            }
         }
 	}
+
+    public void SetUp(MouseClickDetection inMouseClickDetection)
+    {
+        mouseClickDetection = inMouseClickDetection;
+        selectedGameObject = mouseClickDetection.GetSelectedGameObject();
+    }
 
 	public void XDown(float inXValue) 
 	{

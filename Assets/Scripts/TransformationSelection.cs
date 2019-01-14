@@ -53,6 +53,8 @@ public class TransformationSelection : MonoBehaviour {
 
 		// sets the child(AxisControl) uis active 
 		axisControl.gameObject.SetActive(true);
+        // pass the MouseClickDetection component
+        axisControl.GetComponent<AxisControl>().SetUp(mouseClickDetection);
 	}
 
 	private void SetTransformationModeFlags(
