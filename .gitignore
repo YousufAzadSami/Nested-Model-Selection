@@ -65,7 +65,11 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.meta
+
+# *.meta 
+# meta files are needed, otherwise "missing prefab" etc 
+# After discussion with Jorge. 
+
 *.obj
 *.iobj
 *.pch
