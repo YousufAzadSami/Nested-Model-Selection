@@ -31,9 +31,9 @@ public class AxisControl : MonoBehaviour {
         xValue = yValue = zValue = 0;
         maxXValue = maxYValue = maxZValue = 1;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         // uncomment the next line to see what happens and try dealing with it better
         // if (isXDown)
@@ -51,13 +51,21 @@ public class AxisControl : MonoBehaviour {
             }
             else
             {
-                Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
+                //Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
             }
         }
 
 
-        Debug.Log("Value from x slider" + CrossPlatformInputManager.GetAxis("xAxis"));
-	}
+        //if (CrossPlatformInputManager.GetAxis("yAxis") > .1f)
+        //{
+        //    Debug.Log("Value from y slider : " + CrossPlatformInputManager.GetAxis("yAxis"));
+        //}
+
+        if (CrossPlatformInputManager.GetAxis("xAxis") > .1f)
+        {
+            Debug.Log("Value from x slider : " + CrossPlatformInputManager.GetAxis("xAxis"));
+        }
+    }
 
     public void SetUp(MouseClickDetection inMouseClickDetection)
     {
