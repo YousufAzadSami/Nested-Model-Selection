@@ -22,11 +22,16 @@ public class InputTest : MonoBehaviour {
             Debug.Log("Button : Jump, Button name : \"CustomJump\"");
         }
 
+        if (CrossPlatformInputManager.GetButtonDown("NewButton"))
+        {
+            Debug.Log("Button : Jump, Button name : \"NewButton\"");
+        }
+
         if (CrossPlatformInputManager.GetAxis("Vertical") > .01f)
         {
             Debug.Log("Slidebar : " + CrossPlatformInputManager.GetAxis("Vertical"));
         }
 
-        Debug.Log("For the MobileAircraftControls>Right prefab : " + CrossPlatformInputManager.GetAxis("Horizontal"));
+        // Debug.Log("For the MobileAircraftControls>Right prefab : " + CrossPlatformInputManager.GetAxis("Horizontal"));
     }
 }
