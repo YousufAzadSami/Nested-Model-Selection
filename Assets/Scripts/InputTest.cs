@@ -27,6 +27,11 @@ public class InputTest : MonoBehaviour {
             Debug.Log("Button : Jump, Button name : \"NewButton\"");
         }
 
+        if (CrossPlatformInputManager.GetButtonDown("NewButton02"))
+        {
+            Debug.Log("Button : Jump, Button name : \"NewButton02\", for this button, the button handler is attached to another object");
+        }
+
         if (CrossPlatformInputManager.GetAxis("Vertical") > .01f)
         {
             Debug.Log("Slidebar : " + CrossPlatformInputManager.GetAxis("Vertical"));
