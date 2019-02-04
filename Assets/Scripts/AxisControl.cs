@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class AxisControl : MonoBehaviour {
 
@@ -53,6 +54,9 @@ public class AxisControl : MonoBehaviour {
                 Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
             }
         }
+
+
+        Debug.Log("Value from x slider" + CrossPlatformInputManager.GetAxis("xAxis"));
 	}
 
     public void SetUp(MouseClickDetection inMouseClickDetection)
