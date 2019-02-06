@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TransformationSelection : MonoBehaviour {
 
@@ -55,9 +57,46 @@ public class TransformationSelection : MonoBehaviour {
 		axisControl.gameObject.SetActive(true);
         // pass the MouseClickDetection component
         axisControl.GetComponent<AxisControl>().SetUp(mouseClickDetection);
+
+        // if rotation is slected, set the slider values according the the
+        // current rotation value of the selected object
+        SetSliderValues(inTransformationMode);
 	}
 
-	private void SetTransformationModeFlags(
+    // if rotation is slected, set the slider values according the the
+    // current rotation value of the selected object
+    private void SetSliderValues(int inTransformationMode)
+    {
+        if (inTransformationMode == (int)TransformationMode.Rotate)
+        {
+            Vector3 rot = mouseClickDetection.GetSelectedGameObject().transform.rotation.eulerAngles;
+
+            for (int i = 0; i < axisControl.childCount; i++)
+            {
+                //axisControl.Get
+            }
+
+            Slider[] childrenSliders = axisControl.GetComponentsInChildren<Slider>();
+
+            foreach (Slider slider in childrenSliders)
+            {
+                if (slider.gameObject.name == "x")
+                {
+                    slider.value = rot.x;
+                }
+                else if (slider.gameObject.name == "y")
+                {
+                    slider.value = rot.y;
+                }
+                else
+                {
+                    slider.value = rot.z;
+                }
+            }
+        }
+    }
+
+    private void SetTransformationModeFlags(
 		int inTransformationMode, out bool inTranslate, out bool inRotate, out bool inScale)
 	{
 		inTranslate = inRotate = inScale = false;
