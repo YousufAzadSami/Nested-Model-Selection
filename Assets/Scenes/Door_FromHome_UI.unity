@@ -563,12 +563,27 @@ Prefab:
     - target: {fileID: 114058207466678150, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
         type: 2}
       propertyPath: m_Value
-      value: 181
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 114255930229933740, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
         type: 2}
       propertyPath: m_Value
-      value: 1
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114859354211128338, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255930229933740, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114859354211128338, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
+        type: 2}
+      propertyPath: m_Value
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dafb3b6077cf6544b6da8e87b5a5240, type: 2}

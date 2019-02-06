@@ -55,7 +55,9 @@ public class AxisControl : MonoBehaviour {
             }
         }
 
-        Debug.Log("xAxis : " + CrossPlatformInputManager.GetAxis("xAxis") + ", yAxis : " + CrossPlatformInputManager.GetAxis("yAxis"));
+        Debug.Log("xAxis : " + CrossPlatformInputManager.GetAxis("xAxis")
+            + ", yAxis : " + CrossPlatformInputManager.GetAxis("yAxis")
+            + ", zAxis : " + CrossPlatformInputManager.GetAxis("zAxis"));
     }
 
     public void SetUp(MouseClickDetection inMouseClickDetection)
