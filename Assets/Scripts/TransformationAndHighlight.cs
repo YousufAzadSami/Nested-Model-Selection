@@ -73,7 +73,12 @@ public class TransformationAndHighlight : MonoBehaviour {
                 // Debug.Log("tiltAroundX: " + tiltAroundX);
 
                 //Vector3 target = transform.position + new Vector3(tiltAroundX, tiltAroundY, 0);
-                Vector3 target = transform.position + new Vector3(xValue, yValue, zValue);
+                //Vector3 target = transform.position + new Vector3(xValue, yValue, zValue);
+                Vector3 target = transform.position + new Vector3(
+                    CrossPlatformInputManager.GetAxis("xTranslation"),
+                    CrossPlatformInputManager.GetAxis("yTranslation"),
+                    CrossPlatformInputManager.GetAxis("zTranslation"));
+
 
                 transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
             }
