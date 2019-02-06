@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3269566d48b8447bb48d2259e28f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: yAxis
+  axis: yRotation
 --- !u!1 &1158193655 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1128760378675170, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
@@ -257,13 +257,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3269566d48b8447bb48d2259e28f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: zAxis
+  axis: zRotation
 --- !u!114 &1248939214 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114983148062311260, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
     type: 2}
   m_PrefabInternal: {fileID: 1706601690}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1279100581 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1889514927241152, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
+    type: 2}
+  m_PrefabInternal: {fileID: 1706601690}
+--- !u!114 &1279100582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1279100581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33685d16262e0324287b297763270381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1335697902 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1058953173882572, guid: 2dafb3b6077cf6544b6da8e87b5a5240,
@@ -669,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3269566d48b8447bb48d2259e28f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: xAxis
+  axis: xRotation
 --- !u!1 &1706601693 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1937939324937934, guid: 2dafb3b6077cf6544b6da8e87b5a5240,

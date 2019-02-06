@@ -85,9 +85,9 @@ public class TransformationAndHighlight : MonoBehaviour {
             else if (rotateMode)
             {
                 Quaternion target = Quaternion.Euler(
-                    CrossPlatformInputManager.GetAxis("xAxis"),
-                    CrossPlatformInputManager.GetAxis("yAxis"),
-                    CrossPlatformInputManager.GetAxis("zAxis"));
+                    CrossPlatformInputManager.GetAxis("xRotation"),
+                    CrossPlatformInputManager.GetAxis("yRotation"),
+                    CrossPlatformInputManager.GetAxis("zRotation"));
                 transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * smooth);
             }
             else if (scaleMode)
