@@ -55,16 +55,7 @@ public class AxisControl : MonoBehaviour {
             }
         }
 
-
-        //if (CrossPlatformInputManager.GetAxis("yAxis") > .1f)
-        //{
-        //    Debug.Log("Value from y slider : " + CrossPlatformInputManager.GetAxis("yAxis"));
-        //}
-
-        if (CrossPlatformInputManager.GetAxis("xAxis") > .1f)
-        {
-            Debug.Log("Value from x slider : " + CrossPlatformInputManager.GetAxis("xAxis"));
-        }
+        Debug.Log("xAxis : " + CrossPlatformInputManager.GetAxis("xAxis") + ", yAxis : " + CrossPlatformInputManager.GetAxis("yAxis"));
     }
 
     public void SetUp(MouseClickDetection inMouseClickDetection)
