@@ -51,7 +51,7 @@ public class AxisControl : MonoBehaviour {
             }
             else
             {
-                //Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
+                Debug.LogError("mouseClickDetection not set. This is needed in order to get the selelcted object");
             }
         }
 
