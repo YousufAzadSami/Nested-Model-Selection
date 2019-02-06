@@ -65,20 +65,10 @@ public class TransformationAndHighlight : MonoBehaviour {
         {
             if (translateMode)
             {
-                // Smoothly tilts a transform towards a target rotation.
-                float tiltAroundX = Input.GetAxis("Horizontal") * 10;
-                float tiltAroundY = Input.GetAxis("Vertical") * 10;
-
-                // Debug.Log("Input.GetAxis(Horizontal): " + Input.GetAxis("Horizontal"));
-                // Debug.Log("tiltAroundX: " + tiltAroundX);
-
-                //Vector3 target = transform.position + new Vector3(tiltAroundX, tiltAroundY, 0);
-                //Vector3 target = transform.position + new Vector3(xValue, yValue, zValue);
                 Vector3 target = transform.position + new Vector3(
                     CrossPlatformInputManager.GetAxis("xTranslation"),
                     CrossPlatformInputManager.GetAxis("yTranslation"),
                     CrossPlatformInputManager.GetAxis("zTranslation"));
-
 
                 transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
             }
@@ -88,6 +78,7 @@ public class TransformationAndHighlight : MonoBehaviour {
                     CrossPlatformInputManager.GetAxis("xRotation"),
                     CrossPlatformInputManager.GetAxis("yRotation"),
                     CrossPlatformInputManager.GetAxis("zRotation"));
+
                 transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * smooth);
             }
             else if (scaleMode)
