@@ -131,20 +131,4 @@ public class TransformationAndHighlight : MonoBehaviour {
     {
         return isSelected;
     }
-
-
-    public void SetXValue(float inXValue)
-    {
-        xValue = inXValue;
-    }
-
-    public void SetYValue(float inYValue)
-    {
-        yValue = inYValue;
-    }
-
-    public void SetZValue(float inZValue)
-    {
-        zValue = inZValue;
-    }
 }
