@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Door_FromHome_UI.unity
+    guid: de76fa6fbc5848c4d99a3a9bf05bff01

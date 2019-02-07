@@ -1,0 +1,9 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <UnityWSASolutionName>NestedModelSelection</UnityWSASolutionName>
+        <UnityWSASolutionDir>C:\Users\Yousuf\CodesAndStuff\Nested-Model-Selection\App\</UnityWSASolutionDir>
+        <UnityProjectDir>C:\Users\Yousuf\CodesAndStuff\Nested-Model-Selection\</UnityProjectDir>
+        <UnityWSAPlayerDir>C:\Program Files\Unity\Hub\Editor\2017.4.12f1\Editor\Data\PlaybackEngines\MetroSupport\</UnityWSAPlayerDir>
+        <UnityWSAToolsDir>$(UnityWSASolutionDir)Unity\Tools\</UnityWSAToolsDir>
+    </PropertyGroup>
+</Project>
