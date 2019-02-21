@@ -59,7 +59,7 @@ public class MouseClickDetection : MonoBehaviour
 
     // Unselect all other GameObject, Select the GameObject
     // Or just unselect the already clicked selected GameObject
-    private void SelectObjectRelatedStuff(TransformationAndHighlight inTransformationAndHighlightScript)
+    public void SelectObjectRelatedStuff(TransformationAndHighlight inTransformationAndHighlightScript)
     {
         // if the object is already selected, then we just need to unselect it
         // no need to go unselect every object in the scene
@@ -97,7 +97,7 @@ public class MouseClickDetection : MonoBehaviour
         }
     }
 
-    private void SetActiveUI(bool inActive)
+    public void SetActiveUI(bool inActive)
     {
         // we can either traverse all Transformation related UI 
         // meaning `Tranlate`, `Rotate` or we can hardcode it here

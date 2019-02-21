@@ -22,10 +22,16 @@ public class GazeGestureManager : MonoBehaviour
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null)
             {
+                Debug.Log("Current object : " + this.transform.name + " : Gesture object : " + FocusedObject.name);
                 FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
-            }
 
-            Debug.Log("Gesture object : " + FocusedObject.name);
+                TransformationAndHighlight transformAndHighlight = FocusedObject.GetComponent<TransformationAndHighlight>();
+                if (transformAndHighlight)
+                {
+                    this.GetComponent<MouseClickDetection>().SelectObjectRelatedStuff(transformAndHighlight);
+                    this.GetComponent<MouseClickDetection>().SetActiveUI(transformAndHighlight.SelectedStatus());
+                }
+            }
 
         };
         recognizer.StartCapturingGestures();
