@@ -157,11 +157,24 @@ public class TransformationSelection : MonoBehaviour {
 			GameObject child = parent.GetChild(i).gameObject;
 			if(child.GetInstanceID() != this.gameObject.GetInstanceID())
 			{
-				// from each sigblinghs, access the axisControl componenet which is
-				// located in their children and do stuff
-				child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.SetActive(false);
-			}
-		}
+                // from each sigblinghs, access the axisControl componenet which is
+                // located in their children and do stuff
+                //child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.SetActive(false);
+
+                //something weird going on here:/
+                if (child.GetComponent<TransformationSelection>())
+                {
+                    Debug.Log("If 1");
+
+                    if (child.GetComponent<TransformationSelection>().getChildAxisControl())
+                    {
+                        Debug.Log("If 2 : " + child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.name);
+
+                        child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
 	}
 
 	public void SetUpUiUponObjectSelection()
