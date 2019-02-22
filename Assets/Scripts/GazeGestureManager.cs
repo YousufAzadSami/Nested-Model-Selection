@@ -25,6 +25,7 @@ public class GazeGestureManager : MonoBehaviour
                 Debug.Log("Current object : " + this.transform.name + " : Gesture object : " + FocusedObject.name);
                 FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
 
+                this.GetComponent<MouseClickDetection>().SetSelectedGameObject(FocusedObject);
                 TransformationAndHighlight transformAndHighlight = FocusedObject.GetComponent<TransformationAndHighlight>();
                 if (transformAndHighlight)
                 {

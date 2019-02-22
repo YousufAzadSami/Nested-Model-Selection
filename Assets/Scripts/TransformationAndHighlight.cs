@@ -70,6 +70,10 @@ public class TransformationAndHighlight : MonoBehaviour {
                     CrossPlatformInputManager.GetAxis("yTranslation"),
                     CrossPlatformInputManager.GetAxis("zTranslation"));
 
+                if (CrossPlatformInputManager.GetAxis("xTranslation") > .02f)
+                {
+                    Debug.Log("Translation : " + target);
+                }
                 transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
             }
             else if (rotateMode)

@@ -40,7 +40,7 @@ public class MouseClickDetection : MonoBehaviour
 
 
                 // for the newly made script "TransformationAndHighlight"; does the same thing as above block of code
-                selectedGameObject = rayCastHit.transform.gameObject;
+                SetSelectedGameObject(rayCastHit.transform.gameObject);
                 TransformationAndHighlight transformationAndHighlightScript = rayCastHit.transform.GetComponent<TransformationAndHighlight>();
                 if (transformationAndHighlightScript)
                 {
@@ -112,6 +112,11 @@ public class MouseClickDetection : MonoBehaviour
     public GameObject GetSelectedGameObject()
     {
         return selectedGameObject;
+    }
+
+    public void SetSelectedGameObject(GameObject inSelectedGameObject)
+    {
+        selectedGameObject = inSelectedGameObject;
     }
 
     // Returns all the TransformationAndHighlight component of the selectable objects
