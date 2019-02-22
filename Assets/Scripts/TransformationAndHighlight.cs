@@ -74,7 +74,7 @@ public class TransformationAndHighlight : MonoBehaviour {
                 {
                     Debug.Log("Translation : " + target);
                 }
-                transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth);
+                transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * smooth * .02f);
             }
             else if (rotateMode)
             {
