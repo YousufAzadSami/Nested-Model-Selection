@@ -66,9 +66,9 @@ public class TransformationAndHighlight : MonoBehaviour {
             if (translateMode)
             {
                 Vector3 target = transform.position + new Vector3(
-                    CrossPlatformInputManager.GetAxis("xTranslation"),
-                    CrossPlatformInputManager.GetAxis("yTranslation"),
-                    CrossPlatformInputManager.GetAxis("zTranslation"));
+                    CrossPlatformInputManager.GetAxis("xTranslation2"),
+                    CrossPlatformInputManager.GetAxis("yTranslation2"),
+                    CrossPlatformInputManager.GetAxis("zTranslation2"));
 
                 if (CrossPlatformInputManager.GetAxis("xTranslation") > .02f)
                 {
