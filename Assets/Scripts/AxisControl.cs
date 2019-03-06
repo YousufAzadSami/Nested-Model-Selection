@@ -26,6 +26,8 @@ public class AxisControl : MonoBehaviour {
         //Debug.Log("yTranslationPositive" + CrossPlatformInputManager.GetAxis("yRotation"));
     }
 
+
+    // TODO : I see no use of this as of now, maybe delete later
     public void SetUp(MouseClickDetection inMouseClickDetection)
     {
         mouseClickDetection = inMouseClickDetection;
