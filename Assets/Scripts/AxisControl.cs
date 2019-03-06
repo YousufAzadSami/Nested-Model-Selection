@@ -9,11 +9,11 @@ public class AxisControl : MonoBehaviour {
     private MouseClickDetection mouseClickDetection;
     private GameObject selectedGameObject;
 
-    private Transform xSlider;
+    private Slider[] sliders;
 
     // Use this for initialization
     void Start () {
-        xSlider = transform.Find("x");
+        sliders = GetComponentsInChildren<Slider>();
     }
 
     // Update is called once per frame
@@ -34,6 +34,9 @@ public class AxisControl : MonoBehaviour {
 
     public void resetSlider()
     {
-        xSlider.GetComponent<Slider>().value = 0;
+        foreach(Slider slider in sliders)
+        {
+            slider.value = 0;
+        }
     }
 }
