@@ -22,8 +22,6 @@ GameObject:
   - component: {fileID: 20667196383846252}
   - component: {fileID: 124562789921212862}
   - component: {fileID: 81433247892863262}
-  - component: {fileID: 114852157380143282}
-  - component: {fileID: 114185787256399938}
   m_Layer: 0
   m_Name: Main Camera with raycast
   m_TagString: MainCamera
@@ -87,30 +85,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1490107151637644}
   m_Enabled: 1
---- !u!114 &114185787256399938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1490107151637644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0dfa105655b404bb96f0e84c9fb881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114852157380143282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1490107151637644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113fec7cf0142b84e97add890cc41993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translate: {fileID: 0}
-  rotate: {fileID: 0}
 --- !u!124 &124562789921212862
 Behaviour:
   m_ObjectHideFlags: 1
