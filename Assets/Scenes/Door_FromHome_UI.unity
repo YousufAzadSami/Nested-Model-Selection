@@ -194,6 +194,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1044309129507136, guid: 1c6508bee6c67144cab90cfa5a48e3e9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c6508bee6c67144cab90cfa5a48e3e9, type: 2}
   m_IsPrefabParent: 0
@@ -344,6 +348,7 @@ GameObject:
   - component: {fileID: 1102851441}
   - component: {fileID: 1102851440}
   - component: {fileID: 1102851439}
+  - component: {fileID: 1102851442}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: Untagged
@@ -408,7 +413,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1102851440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1102851442}
+        m_MethodName: ResetSelectedGameObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1102851440
@@ -444,6 +460,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1102851437}
+--- !u!114 &1102851442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102851437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb28016481fc1c48bff2da87edc76cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1390795274
 Prefab:
   m_ObjectHideFlags: 0

@@ -187,4 +187,9 @@ public class TransformationSelection : MonoBehaviour {
 	{
 		return axisControl;
 	}
+
+    public void ResetSelectedGameObjects()
+    {
+        mouseClickDetection.ResetSelectedGameObjects();
+    }
 }

@@ -25,6 +25,11 @@ public class TransformationAndHighlight : MonoBehaviour {
     private float yValue;
     private float zValue;
 
+
+    // reset functionality 
+    public Vector3 startPosition;
+    public Quaternion startRotation;
+
     // Use this for initialization
     void Start () {
         // set up initial mode (translation, rotate, scale)
@@ -37,6 +42,11 @@ public class TransformationAndHighlight : MonoBehaviour {
         highlightColor = Color.red;
         isSelected = false;
         highlightColorTransition = 0.75f;
+
+        // reset functionaliy 
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+        Debug.Log("Position : " + startPosition + ", Rotation : " + startRotation.eulerAngles);
 	}
 	
 	// Update is called once per frame
@@ -134,5 +144,11 @@ public class TransformationAndHighlight : MonoBehaviour {
     public bool SelectedStatus()
     {
         return isSelected;
+    }
+
+    public void ResetTransform()
+    {
+        transform.position = startPosition;
+        transform.rotation = startRotation;
     }
 }

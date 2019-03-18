@@ -159,4 +159,14 @@ public class MouseClickDetection : MonoBehaviour
         GUILayout.Label("World position: " + point.ToString("F3"));
         GUILayout.EndArea();
     }
+
+    public void ResetSelectedGameObjects()
+    {
+        TransformationAndHighlight[] allGameObjects = FindAllSelectableGameObjects();
+
+        foreach (TransformationAndHighlight singleGameobject in allGameObjects)
+        {
+            singleGameobject.ResetTransform();
+        }
+    }
 }
