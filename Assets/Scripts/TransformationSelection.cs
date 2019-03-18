@@ -69,7 +69,7 @@ public class TransformationSelection : MonoBehaviour {
     {
         if (inTransformationMode == (int)TransformationMode.Rotate)
         {
-            Vector3 rot = mouseClickDetection.GetSelectedGameObject().transform.rotation.eulerAngles;
+            Vector3 rot = mouseClickDetection.GetSelectedGameObject().transform.localRotation.eulerAngles;
 
             for (int i = 0; i < axisControl.childCount; i++)
             {
