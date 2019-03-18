@@ -105,8 +105,8 @@ public class MouseClickDetection : MonoBehaviour
         // translate.gameObject.SetActive(inActive);
         // rotate.gameObject.SetActive(inActive);
 
-        translate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection();
-        rotate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection();
+        translate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection(inActive);
+        rotate.GetComponent<TransformationSelection>().SetUpUiUponObjectSelection(inActive);
     }
 
     public GameObject GetSelectedGameObject()
@@ -162,6 +162,13 @@ public class MouseClickDetection : MonoBehaviour
 
     public void ResetSelectedGameObjects()
     {
+        // first unselect all the gameobjects
+        // https://gitlab.cc-asp.fraunhofer.de/nck-ya/nested-model-selection/issues/50
+        UnSelectAll();
+        
+        // This is not part of the issue per se but related
+        SetActiveUI(false);
+
         TransformationAndHighlight[] allGameObjects = FindAllSelectableGameObjects();
 
         foreach (TransformationAndHighlight singleGameobject in allGameObjects)

@@ -173,10 +173,22 @@ public class TransformationSelection : MonoBehaviour {
         }
 	}
 
-	public void SetUpUiUponObjectSelection()
+	public void SetUpUiUponObjectSelection(bool inActive)
 	{
-		this.gameObject.SetActive(true);
-		axisControl.gameObject.SetActive(false);
+        // here the if else logic is redundent. It could have 
+        // been avoided by this.gameObject.SetActive(inActive);
+        // the redundency is kept intentionally so that 
+        // it's easier to understand the code logic
+        if (inActive)
+        {
+            this.gameObject.SetActive(true);
+            axisControl.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+		
 	}
 
 	public Transform getChildAxisControl()

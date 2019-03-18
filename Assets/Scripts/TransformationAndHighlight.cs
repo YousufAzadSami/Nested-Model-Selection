@@ -151,11 +151,11 @@ public class TransformationAndHighlight : MonoBehaviour {
 
     public void ResetTransform()
     {
-        Debug.Log("startRotation Rotation : " + startRotation.eulerAngles);
-        Debug.Log("Rotation Before: " + transform.rotation.eulerAngles);
+        Debug.Log("Name : " + transform.name + " : startRotation Rotation : " + startRotation.eulerAngles);
+        Debug.Log("Name : " + transform.name + " : Rotation Before: " + transform.rotation.eulerAngles);
         transform.localPosition = startPosition;
         //transform.rotation = startRotation;
         transform.localRotation = startRotation;
-        Debug.Log("Rotation After: " + transform.rotation.eulerAngles);
+        Debug.Log("Name : " + transform.name + " : Rotation After: " + transform.rotation.eulerAngles);
     }
 }
