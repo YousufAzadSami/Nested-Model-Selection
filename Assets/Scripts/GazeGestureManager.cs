@@ -65,6 +65,8 @@ public class GazeGestureManager : MonoBehaviour
         // start detecting fresh gestures again.
         if (FocusedObject != oldFocusObject)
         {
+            Debug.Log("New selected object : " + FocusedObject.name);
+
             recognizer.CancelGestures();
             recognizer.StartCapturingGestures();
         }
