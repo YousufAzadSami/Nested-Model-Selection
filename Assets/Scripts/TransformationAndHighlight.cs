@@ -29,6 +29,7 @@ public class TransformationAndHighlight : MonoBehaviour {
     // reset functionality 
     public Vector3 startPosition;
     public Quaternion startRotation;
+    public Vector3 startRotationV;
 
     // Use this for initialization
     void Start () {
@@ -44,13 +45,15 @@ public class TransformationAndHighlight : MonoBehaviour {
         highlightColorTransition = 0.75f;
 
         // reset functionaliy 
-        startPosition = transform.position;
-        startRotation = transform.rotation;
-        Debug.Log("Position : " + startPosition + ", Rotation : " + startRotation.eulerAngles);
-	}
+        startPosition = transform.localPosition;
+        //startRotation = transform.rotation;
+        startRotation = transform.localRotation;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
+        startRotationV = startRotation.eulerAngles;
 
         // YAZ Debug code start 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -148,7 +151,11 @@ public class TransformationAndHighlight : MonoBehaviour {
 
     public void ResetTransform()
     {
-        transform.position = startPosition;
-        transform.rotation = startRotation;
+        Debug.Log("startRotation Rotation : " + startRotation.eulerAngles);
+        Debug.Log("Rotation Before: " + transform.rotation.eulerAngles);
+        transform.localPosition = startPosition;
+        //transform.rotation = startRotation;
+        transform.localRotation = startRotation;
+        Debug.Log("Rotation After: " + transform.rotation.eulerAngles);
     }
 }

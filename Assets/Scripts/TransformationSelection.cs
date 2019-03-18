@@ -164,12 +164,8 @@ public class TransformationSelection : MonoBehaviour {
                 //something weird going on here:/
                 if (child.GetComponent<TransformationSelection>())
                 {
-                    Debug.Log("If 1");
-
                     if (child.GetComponent<TransformationSelection>().getChildAxisControl())
                     {
-                        Debug.Log("If 2 : " + child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.name);
-
                         child.GetComponent<TransformationSelection>().getChildAxisControl().gameObject.SetActive(false);
                     }
                 }
