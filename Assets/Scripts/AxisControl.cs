@@ -19,9 +19,9 @@ public class AxisControl : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        //Debug.Log("xAxis : " + CrossPlatformInputManager.GetAxis("xAxis")
-        //    + ", yAxis : " + CrossPlatformInputManager.GetAxis("yAxis")
-        //    + ", zAxis : " + CrossPlatformInputManager.GetAxis("zAxis"));
+        Debug.Log("xRotation : " + CrossPlatformInputManager.GetAxis("xRotation")
+            + ", yRotation : " + CrossPlatformInputManager.GetAxis("yRotation")
+            + ", zRotation : " + CrossPlatformInputManager.GetAxis("zRotation"));
 
         //Debug.Log("yTranslationPositive" + CrossPlatformInputManager.GetAxis("yRotation"));
     }

@@ -188,10 +188,27 @@ public class TransformationSelection : MonoBehaviour {
         {
             this.gameObject.SetActive(false);
         }
-		
-	}
 
-	public Transform getChildAxisControl()
+
+        // reset slider value to zero, so that it does not effect 
+        // the next selected object. This is specially true for rotation sliders
+        // issue : https://gitlab.cc-asp.fraunhofer.de/nck-ya/nested-model-selection/issues/51 
+        // issue : https://gitlab.cc-asp.fraunhofer.de/nck-ya/nested-model-selection/issues/50
+        ResetSliderValues();
+    }
+
+    private void ResetSliderValues()
+    {
+        
+        Slider[] childrenSliders = axisControl.GetComponentsInChildren<Slider>();
+
+        foreach (Slider slider in childrenSliders)
+        {
+            slider.value = 0;
+        }
+    }
+
+    public Transform getChildAxisControl()
 	{
 		return axisControl;
 	}
